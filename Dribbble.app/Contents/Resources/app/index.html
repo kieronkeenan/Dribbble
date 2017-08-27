@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style media="screen">
+    body{
+      -webkit-app-region: drag;
+    }
+    html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #E74D89;
+    }
+    div.nav{
+      background-color: #333;
+      position: absolute;
+      height: 40px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    webview{
+      position: absolute;
+      top: 41px;
+      left: 0;
+      right: 0;
+      height: 100%;
+      z-index: 1;
+    }
+    div#intro{
+      background: #E74D89;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      z-index: 2;
+    }
+    div#intro img{
+      max-width: 128px;
+      display: inline-block;
+      position: relative;
+  top: 40%;
+  transform: translateY(-40%);
+  -webkit-animation: spin 1s infinite linear;
+    }
+
+    @-webkit-keyframes spin {
+        0%  {-webkit-transform: rotate(0deg);}
+        100% {-webkit-transform: rotate(360deg);}
+    }
+    </style>
+    <script type="text/javascript">
+
+
+
+        setTimeout(function(){
+           document.getElementById("intro").style.display = 'none';
+        }, 2000);
+
+
+
+    </script>
+  </head>
+  <body>
+    <div class="nav">
+    </div>
+    <div id="intro">
+      <img src='assets/icons/png/256x256.png'/>
+    </div>
+  <webview src="https://dribbble.com/"></webview>
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+
+    </script>
+  </body>
+</html>
